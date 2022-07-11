@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/buttoncolor.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/swoosh_toggle.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/togglebutton.xml" value="0.2085" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/activity_screen2.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/activity_swoosh2.xml" value="0.23802083333333332" />
       </map>
     </option>
   </component>
