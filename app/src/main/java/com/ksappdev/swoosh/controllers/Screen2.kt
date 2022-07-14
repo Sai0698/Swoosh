@@ -1,10 +1,12 @@
-package com.ksappdev.swoosh
+package com.ksappdev.swoosh.controllers
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.ksappdev.swoosh.EXTRA_LEAGUE
+import com.ksappdev.swoosh.R
 import kotlinx.android.synthetic.main.activity_screen2.*
 
 class Screen2 : AppCompatActivity() {
@@ -34,9 +36,9 @@ class Screen2 : AppCompatActivity() {
     }
     fun secondbuttonclicked(view: View) {
         if(selectedstring!="") {
-            val intent = Intent(this, Screen3::class.java)
-            intent.putExtra(EXTRA_LEAGUE,selectedstring)
-            startActivity(intent)
+            val skillintent = Intent(this, Screen3::class.java)
+            skillintent.putExtra(EXTRA_LEAGUE,selectedstring)
+            startActivity(skillintent)
         }else{
             Toast.makeText(this,"Kindly select one League",Toast.LENGTH_SHORT).show()
         }
