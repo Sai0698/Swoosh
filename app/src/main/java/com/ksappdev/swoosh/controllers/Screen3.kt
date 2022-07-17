@@ -5,37 +5,36 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.ksappdev.swoosh.EXTRA_LEAGUE
-import com.ksappdev.swoosh.EXTRA_SKILL
+import com.ksappdev.swoosh.EXTRA_PLAYER
 import com.ksappdev.swoosh.R
+import com.ksappdev.swoosh.player.Player
 import kotlinx.android.synthetic.main.activity_screen3.*
 
-class Screen3 : AppCompatActivity() {
-    var skill = ""
-    var lky=""
+class Screen3 : BaseActivity() {
+
+    lateinit var player:Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_screen3)
-        lky = intent.getStringExtra(EXTRA_LEAGUE).toString()
+         player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)!!
     }
 
         fun bgnrBtnClicked(view: View) {
             ballerBtn.isChecked = false
-            skill = "Begginer"
+            player.skill = "Beginner"
 
         }
 
         fun BlrBtnClicked(view: View) {
             begginerBtn.isChecked = false
-            skill = "Baller"
+            player.skill = "Baller"
         }
 
         fun finishBtnClicked(view: View) {
-            if (skill != "") {
+            if (player.skill != "") {
                 val finishintent = Intent(this, FinishScreen::class.java)
-                finishintent.putExtra(EXTRA_LEAGUE, lky)
-                finishintent.putExtra(EXTRA_SKILL, skill)
+                finishintent.putExtra(EXTRA_PLAYER,player)
                 startActivity(finishintent)
             } else {
                 Toast.makeText(this, "Please select Skill set", Toast.LENGTH_SHORT).show()
